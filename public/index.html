@@ -395,6 +395,274 @@
         .btn-primary:hover {
             background: #5568d3;
         }
+
+        /* Exam Setup Styles */
+        .exam-setup {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .exam-setup h2 {
+            margin-bottom: 24px;
+        }
+
+        .setup-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group select,
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            color: #333;
+            appearance: auto;
+        }
+
+        .form-group select:focus,
+        .form-group input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.15);
+        }
+
+        .difficulty-options {
+            display: flex;
+            gap: 12px;
+        }
+
+        .difficulty-option {
+            flex: 1;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .difficulty-option:hover {
+            border-color: #667eea;
+        }
+
+        .difficulty-option.selected {
+            border-color: #667eea;
+            background: #f0f3ff;
+        }
+
+        .difficulty-option .diff-label {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .difficulty-option .diff-desc {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .btn-generate {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(102,126,234,0.4);
+        }
+
+        .btn-generate:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Exam / Question UI */
+        .exam-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .exam-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        .exam-timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .question-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+
+        .question-number {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            color: #333;
+        }
+
+        .option-list {
+            list-style: none;
+        }
+
+        .option-item {
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option-item:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .option-item.selected {
+            border-color: #667eea;
+            background: #f0f3ff;
+        }
+
+        .option-letter {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .option-item.selected .option-letter {
+            background: #667eea;
+            color: white;
+        }
+
+        .question-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .question-nav .btn {
+            flex: 1;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        .btn-submit {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background: #43a047;
+        }
+
+        /* Results */
+        .results-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .results-score {
+            font-size: 64px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 16px 0;
+        }
+
+        .results-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 24px 0;
+        }
+
+        .results-stat {
+            text-align: center;
+        }
+
+        .results-stat .stat-num {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .results-stat .stat-lbl {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .correct-color { color: #4caf50; }
+        .incorrect-color { color: #f44336; }
+        .skipped-color { color: #ff9800; }
     </style>
 </head>
 <body>
@@ -434,73 +702,76 @@
 
         <!-- Main Content -->
         <div class="main-content">
-            <!-- Practice Tab (existing exam generation interface) -->
             <!-- Practice Tab -->
             <div id="practiceTab" class="tab-content active">
-                <div style="padding: 32px; max-width: 1200px; margin: 0 auto;">
-                    <h2 style="margin-bottom: 32px; text-align: center;">Generate Practice Test</h2>
-           
-                <!-- Exam Setup Form -->
-                <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-               
-                <!-- Exam Type Selection -->
-                <div style="margin-bottom: 24px;">
-                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Select Exam Type</label>
-                   <select id="setupExamType" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
-                       <option value="jee">JEE Main</option>
-                       <option value="neet">NEET</option>
-                       <option value="ssc">SSC</option>
-                   </select>
+                <!-- Exam Setup -->
+                <div id="examSetup" class="exam-setup">
+                    <h2>Start a Practice Test</h2>
+                    <div class="setup-card">
+                        <div class="form-group">
+                            <label for="examTypeSelect">Exam Type</label>
+                            <select id="examTypeSelect" onchange="onExamTypeChange()">
+                                <option value="">-- Select Exam --</option>
+                                <option value="jee">JEE Main</option>
+                                <option value="neet">NEET</option>
+                                <option value="ssc">SSC</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjectSelect">Subject</label>
+                            <select id="subjectSelect" disabled>
+                                <option value="">-- Select Exam Type first --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Difficulty Level</label>
+                            <div class="difficulty-options">
+                                <div class="difficulty-option" data-diff="easy" onclick="selectDifficulty(this)">
+                                    <div class="diff-label">Easy</div>
+                                    <div class="diff-desc">Fundamentals</div>
+                                </div>
+                                <div class="difficulty-option" data-diff="medium" onclick="selectDifficulty(this)">
+                                    <div class="diff-label">Medium</div>
+                                    <div class="diff-desc">Moderate</div>
+                                </div>
+                                <div class="difficulty-option" data-diff="hard" onclick="selectDifficulty(this)">
+                                    <div class="diff-label">Hard</div>
+                                    <div class="diff-desc">Advanced</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questionCount">Number of Questions</label>
+                            <input type="number" id="questionCount" min="5" max="30" value="10">
+                        </div>
+
+                        <button class="btn-generate" id="generateBtn" onclick="generateExam()">Generate Exam</button>
+                    </div>
                 </div>
-               
-                <!-- Questions Per Subject -->
-                <div style="margin-bottom: 24px;">
-                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Number of Questions per Subject</label>
-                   <select id="setupQuestionsPerSubject" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
-                       <option value="5">5 Questions</option>
-                       <option value="10" selected>10 Questions</option>
-                       <option value="15">15 Questions</option>
-                       <option value="20">20 Questions</option>
-                   </select>
-               </div>
-               
-               <!-- Difficulty Level -->
-               <div style="margin-bottom: 24px;">
-                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Difficulty Level</label>
-                   <div style="display: flex; gap: 12px;">
-                       <button class="difficulty-btn-inline" data-difficulty="easy" style="flex: 1; padding: 12px; border: 2px solid #e0e0e0; background: white; border-radius: 8px; cursor: pointer; font-weight: 600;">Easy</button>
-                       <button class="difficulty-btn-inline selected" data-difficulty="medium" style="flex: 1; padding: 12px; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 8px; cursor: pointer; font-weight: 600;">Medium</button>
-                       <button class="difficulty-btn-inline" data-difficulty="hard" style="flex: 1; padding: 12px; border: 2px solid #e0e0e0; background: white; border-radius: 8px; cursor: pointer; font-weight: 600;">Hard</button>
-                   </div>
-               </div>
-               
-               <!-- Subject Selection -->
-               <div style="margin-bottom: 24px;">
-                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Select Subjects</label>
-                   <div id="setupSubjectCheckboxes"></div>
-               </div>
-               
-               <!-- Duration -->
-               <div style="margin-bottom: 32px;">
-                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Exam Duration (minutes)</label>
-                   <select id="setupExamDuration" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
-                       <option value="30">30 Minutes</option>
-                       <option value="60">60 Minutes</option>
-                       <option value="90">90 Minutes</option>
-                       <option value="120">120 Minutes</option>
-                       <option value="180" selected>180 Minutes</option>
-                   </select>
-               </div>
-               
-               <!-- Generate Button -->
-               <button onclick="startPracticeTest()" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer;">
-                   Generate Practice Test
-               </button>
-               
-               <div id="setupError" style="color: red; margin-top: 16px; display: none;"></div>
+
+                <!-- Active Exam -->
+                <div id="examActive" class="exam-container hidden">
+                    <div class="exam-header">
+                        <div>
+                            <span id="examLabel" style="font-weight:600;"></span>
+                            <span id="examSubjectLabel" style="margin-left:12px;color:#666;"></span>
+                        </div>
+                        <div class="exam-timer" id="examTimer">00:00</div>
+                    </div>
+                    <div id="questionArea"></div>
+                    <div class="question-nav">
+                        <button class="btn btn-secondary" id="prevBtn" onclick="navigateQuestion(-1)">Previous</button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="navigateQuestion(1)">Next</button>
+                        <button class="btn btn-submit" id="submitExamBtn" onclick="submitExam()">Submit Exam</button>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="examResults" class="exam-container hidden"></div>
             </div>
-        </div>
-    </div>
 
             <!-- History Tab -->
             <div id="historyTab" class="tab-content">
@@ -609,7 +880,7 @@
         // Initialize Google Sign-In
         window.onload = function() {
             google.accounts.id.initialize({
-                client_id: '412350968767-3d554m2r0o3pd5uq8es578nhlm8m4qtg.apps.googleusercontent.com',
+                client_id: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
                 callback: handleGoogleSignIn
             });
 
@@ -846,164 +1117,256 @@
 
         function viewAttempt(id) {
             alert('View attempt details for: ' + id);
-            // Implement detailed view
         }
 
-        // Initialize exam setup
-   function initializeExamSetup() {
-       const examConfigs = {
-           jee: {
-               subjects: {
-                   physics: 'Physics',
-                   chemistry: 'Chemistry',
-                   mathematics: 'Mathematics'
-               }
-           },
-           neet: {
-               subjects: {
-                   physics: 'Physics',
-                   chemistry: 'Chemistry',
-                   biology: 'Biology',
-                   zoology: 'Zoology',
-                   botany: 'Botany'
-               }
-           },
-           ssc: {
-               subjects: {
-                   reasoning: 'General Intelligence & Reasoning',
-                   quantitative: 'Quantitative Aptitude',
-                   english: 'English Language',
-                   gk: 'General Knowledge & Awareness'
-               }
-           }
-       };
-       
-       function updateSubjects() {
-           const examType = document.getElementById('setupExamType').value;
-           const container = document.getElementById('setupSubjectCheckboxes');
-           container.innerHTML = '';
-           
-           const subjects = examConfigs[examType].subjects;
-           Object.keys(subjects).forEach(key => {
-               const div = document.createElement('div');
-               div.style.cssText = 'padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; margin-bottom: 8px; cursor: pointer;';
-               div.innerHTML = `
-                   <label style="display: flex; align-items: center; cursor: pointer;">
-                       <input type="checkbox" checked data-subject="${key}" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;">
-                       <span>${subjects[key]}</span>
-                   </label>
-               `;
-               div.onclick = function(e) {
-                   if (e.target.tagName !== 'INPUT') {
-                       const checkbox = this.querySelector('input');
-                       checkbox.checked = !checkbox.checked;
-                   }
-                   this.style.borderColor = this.querySelector('input').checked ? '#667eea' : '#e0e0e0';
-                   this.style.background = this.querySelector('input').checked ? '#f8f9ff' : 'white';
-               };
-               container.appendChild(div);
-           });
-       }
-       
-       document.getElementById('setupExamType').addEventListener('change', updateSubjects);
-       
-       document.querySelectorAll('.difficulty-btn-inline').forEach(btn => {
-           btn.addEventListener('click', function() {
-               document.querySelectorAll('.difficulty-btn-inline').forEach(b => {
-                   b.style.border = '2px solid #e0e0e0';
-                   b.style.background = 'white';
-                   b.style.color = '#333';
-                   b.classList.remove('selected');
-               });
-               this.style.border = '2px solid #667eea';
-               this.style.background = '#667eea';
-               this.style.color = 'white';
-               this.classList.add('selected');
-           });
-       });
-       
-       updateSubjects();
-   }
-   
-   async function startPracticeTest() {
-       const examType = document.getElementById('setupExamType').value;
-       const questionsPerSubject = parseInt(document.getElementById('setupQuestionsPerSubject').value);
-       const difficulty = document.querySelector('.difficulty-btn-inline.selected').dataset.difficulty;
-       const duration = parseInt(document.getElementById('setupExamDuration').value);
-       
-       const selectedSubjects = [];
-       document.querySelectorAll('#setupSubjectCheckboxes input:checked').forEach(cb => {
-           selectedSubjects.push(cb.dataset.subject);
-       });
-       
-       if (selectedSubjects.length === 0) {
-           document.getElementById('setupError').textContent = 'Please select at least one subject';
-           document.getElementById('setupError').style.display = 'block';
-           return;
-       }
-       
-       document.getElementById('setupError').style.display = 'none';
-       
-       // Show loading
-       const btn = event.target;
-       btn.disabled = true;
-       btn.textContent = 'Generating Questions...';
-       
-       try {
-           // Generate questions for each subject
-           const allQuestions = {};
-           
-           for (const subject of selectedSubjects) {
-               const response = await fetch(`${API_URL}/api/generate-questions`, {
-                   method: 'POST',
-                   headers: {
-                       'Content-Type': 'application/json',
-                       'Authorization': `Bearer ${accessToken}`
-                   },
-                   body: JSON.stringify({
-                       examType,
-                       subject,
-                       count: questionsPerSubject,
-                       difficulty
-                   })
-               });
-               
-               if (!response.ok) {
-                   throw new Error('Failed to generate questions');
-               }
-               
-               const data = await response.json();
-               allQuestions[subject] = data.questions;
-           }
-           
-           // Store exam data and redirect to exam interface
-           sessionStorage.setItem('examData', JSON.stringify({
-               questions: allQuestions,
-               examType,
-               difficulty,
-               duration,
-               subjects: selectedSubjects
-           }));
-           
-           // For now, just show alert (we'll add exam interface later)
-           alert('Exam generated! Opening exam interface...\n\nNote: Full exam interface coming soon. For now, questions are generated successfully.');
-           
-           btn.disabled = false;
-           btn.textContent = 'Generate Practice Test';
-           
-       } catch (error) {
-           console.error('Error:', error);
-           document.getElementById('setupError').textContent = 'Failed to generate exam. Please try again.';
-           document.getElementById('setupError').style.display = 'block';
-           btn.disabled = false;
-           btn.textContent = 'Generate Practice Test';
-       }
-   }
-   
-   // Initialize when Practice tab is shown
-   if (currentUser) {
-       initializeExamSetup();
-   }
+        // ====== Exam Practice Logic ======
+
+        const subjectsByExam = {
+            jee: [
+                { value: 'physics', label: 'Physics' },
+                { value: 'chemistry', label: 'Chemistry' },
+                { value: 'mathematics', label: 'Mathematics' }
+            ],
+            neet: [
+                { value: 'physics', label: 'Physics' },
+                { value: 'chemistry', label: 'Chemistry' },
+                { value: 'biology', label: 'Biology' },
+                { value: 'zoology', label: 'Zoology' },
+                { value: 'botany', label: 'Botany' }
+            ],
+            ssc: [
+                { value: 'reasoning', label: 'General Intelligence & Reasoning' },
+                { value: 'quantitative', label: 'Quantitative Aptitude' },
+                { value: 'english', label: 'English Language' },
+                { value: 'gk', label: 'General Knowledge & Current Affairs' }
+            ]
+        };
+
+        let selectedDifficulty = null;
+        let examQuestions = [];
+        let userAnswers = [];
+        let currentQuestionIndex = 0;
+        let timerInterval = null;
+        let elapsedSeconds = 0;
+
+        function onExamTypeChange() {
+            const examType = document.getElementById('examTypeSelect').value;
+            const subjectSelect = document.getElementById('subjectSelect');
+
+            subjectSelect.innerHTML = '';
+
+            if (!examType) {
+                subjectSelect.disabled = true;
+                subjectSelect.innerHTML = '<option value="">-- Select Exam Type first --</option>';
+                return;
+            }
+
+            subjectSelect.disabled = false;
+            subjectSelect.innerHTML = '<option value="">-- Select Subject --</option>';
+            subjectsByExam[examType].forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s.value;
+                opt.textContent = s.label;
+                subjectSelect.appendChild(opt);
+            });
+        }
+
+        function selectDifficulty(el) {
+            document.querySelectorAll('.difficulty-option').forEach(d => d.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedDifficulty = el.getAttribute('data-diff');
+        }
+
+        async function generateExam() {
+            const examType = document.getElementById('examTypeSelect').value;
+            const subject = document.getElementById('subjectSelect').value;
+            const count = parseInt(document.getElementById('questionCount').value) || 10;
+
+            if (!examType) return alert('Please select an exam type.');
+            if (!subject) return alert('Please select a subject.');
+            if (!selectedDifficulty) return alert('Please select a difficulty level.');
+
+            const btn = document.getElementById('generateBtn');
+            btn.disabled = true;
+            btn.textContent = 'Generating questions...';
+
+            try {
+                const response = await fetch(`${API_URL}/api/generate-questions`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: JSON.stringify({ examType, subject, count, difficulty: selectedDifficulty })
+                });
+
+                if (!response.ok) {
+                    const err = await response.json();
+                    throw new Error(err.error || 'Failed to generate questions');
+                }
+
+                const data = await response.json();
+                examQuestions = data.questions;
+                userAnswers = new Array(examQuestions.length).fill(null);
+                currentQuestionIndex = 0;
+                elapsedSeconds = 0;
+
+                const examNames = { jee: 'JEE Main', neet: 'NEET', ssc: 'SSC' };
+                document.getElementById('examLabel').textContent = examNames[examType];
+                document.getElementById('examSubjectLabel').textContent =
+                    subjectsByExam[examType].find(s => s.value === subject)?.label || subject;
+
+                document.getElementById('examSetup').classList.add('hidden');
+                document.getElementById('examActive').classList.remove('hidden');
+
+                renderQuestion();
+                startTimer();
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Generate Exam';
+            }
+        }
+
+        function renderQuestion() {
+            const q = examQuestions[currentQuestionIndex];
+            const area = document.getElementById('questionArea');
+            const letters = ['A', 'B', 'C', 'D'];
+
+            area.innerHTML = `
+                <div class="question-card">
+                    <div class="question-number">Question ${currentQuestionIndex + 1} of ${examQuestions.length}</div>
+                    <div class="question-text">${q.question}</div>
+                    <ul class="option-list">
+                        ${q.options.map((opt, i) => `
+                            <li class="option-item ${userAnswers[currentQuestionIndex] === i ? 'selected' : ''}"
+                                onclick="selectAnswer(${i})">
+                                <span class="option-letter">${letters[i]}</span>
+                                <span>${opt}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+
+            document.getElementById('prevBtn').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextBtn').style.display =
+                currentQuestionIndex === examQuestions.length - 1 ? 'none' : '';
+            document.getElementById('submitExamBtn').style.display =
+                currentQuestionIndex === examQuestions.length - 1 ? '' : 'none';
+        }
+
+        function selectAnswer(index) {
+            userAnswers[currentQuestionIndex] = index;
+            renderQuestion();
+        }
+
+        function navigateQuestion(direction) {
+            currentQuestionIndex += direction;
+            if (currentQuestionIndex < 0) currentQuestionIndex = 0;
+            if (currentQuestionIndex >= examQuestions.length) currentQuestionIndex = examQuestions.length - 1;
+            renderQuestion();
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                elapsedSeconds++;
+                const mins = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
+                const secs = String(elapsedSeconds % 60).padStart(2, '0');
+                document.getElementById('examTimer').textContent = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function submitExam() {
+            const unansweredCount = userAnswers.filter(a => a === null).length;
+            if (unansweredCount > 0 && !confirm(`You have ${unansweredCount} unanswered question(s). Submit anyway?`)) {
+                return;
+            }
+
+            clearInterval(timerInterval);
+
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let unanswered = 0;
+
+            examQuestions.forEach((q, i) => {
+                if (userAnswers[i] === null) {
+                    unanswered++;
+                } else if (userAnswers[i] === q.correctAnswer) {
+                    correctCount++;
+                } else {
+                    incorrectCount++;
+                }
+            });
+
+            const maxScore = examQuestions.length * 4;
+            const score = (correctCount * 4) - (incorrectCount * 1); // +4 correct, -1 wrong
+
+            document.getElementById('examActive').classList.add('hidden');
+
+            const resultsDiv = document.getElementById('examResults');
+            resultsDiv.classList.remove('hidden');
+            resultsDiv.innerHTML = `
+                <div class="results-card">
+                    <h2>Exam Complete!</h2>
+                    <div class="results-score">${Math.max(score, 0)}/${maxScore}</div>
+                    <div class="results-stats">
+                        <div class="results-stat">
+                            <div class="stat-num correct-color">${correctCount}</div>
+                            <div class="stat-lbl">Correct</div>
+                        </div>
+                        <div class="results-stat">
+                            <div class="stat-num incorrect-color">${incorrectCount}</div>
+                            <div class="stat-lbl">Incorrect</div>
+                        </div>
+                        <div class="results-stat">
+                            <div class="stat-num skipped-color">${unanswered}</div>
+                            <div class="stat-lbl">Skipped</div>
+                        </div>
+                    </div>
+                    <p style="color:#666;">Time taken: ${Math.floor(elapsedSeconds / 60)}m ${elapsedSeconds % 60}s</p>
+                    <button class="btn btn-primary" style="margin-top:24px;" onclick="backToSetup()">Take Another Test</button>
+                </div>
+            `;
+
+            // Save attempt to server (fire and forget)
+            const examType = document.getElementById('examTypeSelect').value;
+            const subject = document.getElementById('subjectSelect').value;
+            fetch(`${API_URL}/api/attempts`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`
+                },
+                body: JSON.stringify({
+                    examType,
+                    subjects: [subject],
+                    difficulty: selectedDifficulty,
+                    questions: examQuestions.map((q, i) => ({
+                        id: q.id,
+                        question: q.question,
+                        subject: q.subject,
+                        correctAnswer: q.correctAnswer,
+                        userAnswer: userAnswers[i],
+                        isCorrect: userAnswers[i] === q.correctAnswer,
+                        timeTaken: 0
+                    })),
+                    score: Math.max(score, 0),
+                    maxScore,
+                    correct: correctCount,
+                    incorrect: incorrectCount,
+                    unanswered,
+                    timeTaken: elapsedSeconds
+                })
+            }).catch(err => console.error('Failed to save attempt:', err));
+        }
+
+        function backToSetup() {
+            document.getElementById('examResults').classList.add('hidden');
+            document.getElementById('examSetup').classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
