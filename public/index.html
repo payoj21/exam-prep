@@ -435,9 +435,72 @@
         <!-- Main Content -->
         <div class="main-content">
             <!-- Practice Tab (existing exam generation interface) -->
+            <!-- Practice Tab -->
             <div id="practiceTab" class="tab-content active">
-                <iframe src="index.html" style="width: 100%; height: calc(100vh - 100px); border: none;"></iframe>
+                <div style="padding: 32px; max-width: 1200px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 32px; text-align: center;">Generate Practice Test</h2>
+           
+                <!-- Exam Setup Form -->
+                <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+               
+                <!-- Exam Type Selection -->
+                <div style="margin-bottom: 24px;">
+                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Select Exam Type</label>
+                   <select id="setupExamType" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                       <option value="jee">JEE Main</option>
+                       <option value="neet">NEET</option>
+                       <option value="ssc">SSC</option>
+                   </select>
+                </div>
+               
+                <!-- Questions Per Subject -->
+                <div style="margin-bottom: 24px;">
+                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Number of Questions per Subject</label>
+                   <select id="setupQuestionsPerSubject" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                       <option value="5">5 Questions</option>
+                       <option value="10" selected>10 Questions</option>
+                       <option value="15">15 Questions</option>
+                       <option value="20">20 Questions</option>
+                   </select>
+               </div>
+               
+               <!-- Difficulty Level -->
+               <div style="margin-bottom: 24px;">
+                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Difficulty Level</label>
+                   <div style="display: flex; gap: 12px;">
+                       <button class="difficulty-btn-inline" data-difficulty="easy" style="flex: 1; padding: 12px; border: 2px solid #e0e0e0; background: white; border-radius: 8px; cursor: pointer; font-weight: 600;">Easy</button>
+                       <button class="difficulty-btn-inline selected" data-difficulty="medium" style="flex: 1; padding: 12px; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 8px; cursor: pointer; font-weight: 600;">Medium</button>
+                       <button class="difficulty-btn-inline" data-difficulty="hard" style="flex: 1; padding: 12px; border: 2px solid #e0e0e0; background: white; border-radius: 8px; cursor: pointer; font-weight: 600;">Hard</button>
+                   </div>
+               </div>
+               
+               <!-- Subject Selection -->
+               <div style="margin-bottom: 24px;">
+                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Select Subjects</label>
+                   <div id="setupSubjectCheckboxes"></div>
+               </div>
+               
+               <!-- Duration -->
+               <div style="margin-bottom: 32px;">
+                   <label style="display: block; font-weight: 600; margin-bottom: 8px;">Exam Duration (minutes)</label>
+                   <select id="setupExamDuration" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 15px;">
+                       <option value="30">30 Minutes</option>
+                       <option value="60">60 Minutes</option>
+                       <option value="90">90 Minutes</option>
+                       <option value="120">120 Minutes</option>
+                       <option value="180" selected>180 Minutes</option>
+                   </select>
+               </div>
+               
+               <!-- Generate Button -->
+               <button onclick="startPracticeTest()" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer;">
+                   Generate Practice Test
+               </button>
+               
+               <div id="setupError" style="color: red; margin-top: 16px; display: none;"></div>
             </div>
+        </div>
+    </div>
 
             <!-- History Tab -->
             <div id="historyTab" class="tab-content">
@@ -785,6 +848,162 @@
             alert('View attempt details for: ' + id);
             // Implement detailed view
         }
+
+        // Initialize exam setup
+   function initializeExamSetup() {
+       const examConfigs = {
+           jee: {
+               subjects: {
+                   physics: 'Physics',
+                   chemistry: 'Chemistry',
+                   mathematics: 'Mathematics'
+               }
+           },
+           neet: {
+               subjects: {
+                   physics: 'Physics',
+                   chemistry: 'Chemistry',
+                   biology: 'Biology',
+                   zoology: 'Zoology',
+                   botany: 'Botany'
+               }
+           },
+           ssc: {
+               subjects: {
+                   reasoning: 'General Intelligence & Reasoning',
+                   quantitative: 'Quantitative Aptitude',
+                   english: 'English Language',
+                   gk: 'General Knowledge & Awareness'
+               }
+           }
+       };
+       
+       function updateSubjects() {
+           const examType = document.getElementById('setupExamType').value;
+           const container = document.getElementById('setupSubjectCheckboxes');
+           container.innerHTML = '';
+           
+           const subjects = examConfigs[examType].subjects;
+           Object.keys(subjects).forEach(key => {
+               const div = document.createElement('div');
+               div.style.cssText = 'padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; margin-bottom: 8px; cursor: pointer;';
+               div.innerHTML = `
+                   <label style="display: flex; align-items: center; cursor: pointer;">
+                       <input type="checkbox" checked data-subject="${key}" style="width: 20px; height: 20px; margin-right: 12px; cursor: pointer;">
+                       <span>${subjects[key]}</span>
+                   </label>
+               `;
+               div.onclick = function(e) {
+                   if (e.target.tagName !== 'INPUT') {
+                       const checkbox = this.querySelector('input');
+                       checkbox.checked = !checkbox.checked;
+                   }
+                   this.style.borderColor = this.querySelector('input').checked ? '#667eea' : '#e0e0e0';
+                   this.style.background = this.querySelector('input').checked ? '#f8f9ff' : 'white';
+               };
+               container.appendChild(div);
+           });
+       }
+       
+       document.getElementById('setupExamType').addEventListener('change', updateSubjects);
+       
+       document.querySelectorAll('.difficulty-btn-inline').forEach(btn => {
+           btn.addEventListener('click', function() {
+               document.querySelectorAll('.difficulty-btn-inline').forEach(b => {
+                   b.style.border = '2px solid #e0e0e0';
+                   b.style.background = 'white';
+                   b.style.color = '#333';
+                   b.classList.remove('selected');
+               });
+               this.style.border = '2px solid #667eea';
+               this.style.background = '#667eea';
+               this.style.color = 'white';
+               this.classList.add('selected');
+           });
+       });
+       
+       updateSubjects();
+   }
+   
+   async function startPracticeTest() {
+       const examType = document.getElementById('setupExamType').value;
+       const questionsPerSubject = parseInt(document.getElementById('setupQuestionsPerSubject').value);
+       const difficulty = document.querySelector('.difficulty-btn-inline.selected').dataset.difficulty;
+       const duration = parseInt(document.getElementById('setupExamDuration').value);
+       
+       const selectedSubjects = [];
+       document.querySelectorAll('#setupSubjectCheckboxes input:checked').forEach(cb => {
+           selectedSubjects.push(cb.dataset.subject);
+       });
+       
+       if (selectedSubjects.length === 0) {
+           document.getElementById('setupError').textContent = 'Please select at least one subject';
+           document.getElementById('setupError').style.display = 'block';
+           return;
+       }
+       
+       document.getElementById('setupError').style.display = 'none';
+       
+       // Show loading
+       const btn = event.target;
+       btn.disabled = true;
+       btn.textContent = 'Generating Questions...';
+       
+       try {
+           // Generate questions for each subject
+           const allQuestions = {};
+           
+           for (const subject of selectedSubjects) {
+               const response = await fetch(`${API_URL}/api/generate-questions`, {
+                   method: 'POST',
+                   headers: {
+                       'Content-Type': 'application/json',
+                       'Authorization': `Bearer ${accessToken}`
+                   },
+                   body: JSON.stringify({
+                       examType,
+                       subject,
+                       count: questionsPerSubject,
+                       difficulty
+                   })
+               });
+               
+               if (!response.ok) {
+                   throw new Error('Failed to generate questions');
+               }
+               
+               const data = await response.json();
+               allQuestions[subject] = data.questions;
+           }
+           
+           // Store exam data and redirect to exam interface
+           sessionStorage.setItem('examData', JSON.stringify({
+               questions: allQuestions,
+               examType,
+               difficulty,
+               duration,
+               subjects: selectedSubjects
+           }));
+           
+           // For now, just show alert (we'll add exam interface later)
+           alert('Exam generated! Opening exam interface...\n\nNote: Full exam interface coming soon. For now, questions are generated successfully.');
+           
+           btn.disabled = false;
+           btn.textContent = 'Generate Practice Test';
+           
+       } catch (error) {
+           console.error('Error:', error);
+           document.getElementById('setupError').textContent = 'Failed to generate exam. Please try again.';
+           document.getElementById('setupError').style.display = 'block';
+           btn.disabled = false;
+           btn.textContent = 'Generate Practice Test';
+       }
+   }
+   
+   // Initialize when Practice tab is shown
+   if (currentUser) {
+       initializeExamSetup();
+   }
     </script>
 </body>
 </html>
